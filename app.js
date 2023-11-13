@@ -1,4 +1,4 @@
-const max = prompt ("please enter a max number");
+const max = prompt ("Please enter a max number");
 
 const random = Math.floor(Math.random()*max)+1;
 
@@ -11,8 +11,10 @@ while(true){
     }
     guess = parseInt(guess);
     if (guess == random){
-        console.log("you guess the right number!", random);
+        console.log("you guess the right number! random number was", random);
         break;
-    }else
-    { guess = prompt ("This was a wrong guess, please try again!!");}
+    }else if (guess < random){
+            guess = prompt("Hint: your guess number was too small");
+        } else{
+            guess = prompt("Hint: your guess number was too large! Try again");}
 }
